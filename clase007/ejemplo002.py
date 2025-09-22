@@ -49,11 +49,36 @@ def leer_un_float(cartel):
             print(f"Error: '{cadena}' No es un float.")
     return numero
 
+def leer_un_entero_entre_dias(cartel, desde, hasta):
+    while(True):
+        cadena = input(cartel)
+        if(es_entero(cadena)):
+            numero = int(cadena)
+            if desde <= numero <= hasta:
+                return numero
+            else:
+                print(f"Error: '{numero}' esta fuera de rango[{desde, hasta}]")
+        else:
+            print(f"Error: '{cadena}' No es un numero.")
+    
+def leer_un_entero_entre_meses(cartel, desde, hasta):
+    while(True):
+        cadena = input(cartel)
+        if(es_entero(cadena)):
+            numero = int(cadena)
+            if desde <= numero <= hasta:
+                return numero
+            else:
+                print(f"Error: '{numero}' esta fuera de rango[{desde, hasta}]")
+        else:
+            print(f"Error: '{cadena}' No es un numero.")
+    
+
 def main():
-    dia = leer_un_entero("Dia:")
-    mes = leer_un_entero("Mes:")
-    print(dia)
-    print(mes)
+    dia = leer_un_entero_entre_dias("Dia: ", 1,31)
+    mes = leer_un_entero_entre_meses("Mes: ",1,12)
+    
+    print(f"Elegiste el dia {dia}, del mes {mes}")
 
     
 
